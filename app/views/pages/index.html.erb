@@ -1,0 +1,19 @@
+<% if current_user.nil? %>
+  <div class="container ten">
+    <div class="login rounded-box">
+      <p class="welcome">Welcome to ThinChat! Please sign in using your Google Apps account.</p>
+      <div class="login-actions">
+        <%= link_to 'Sign In With Google', user_omniauth_authorize_path(:google), :class => "login-google" %>
+      </div>
+    </div>
+  </div>
+
+<% else %>
+
+  <div class="container ten">
+    <div class="login rounded-box">
+      <p class="welcome">Welcome to ThinChat, <%= current_user.name %>!</p>
+    </div>
+  </div>  
+
+<% end %>
