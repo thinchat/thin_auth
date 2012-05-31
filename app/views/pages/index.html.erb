@@ -13,6 +13,7 @@
   <div class="container ten">
     <div class="login rounded-box">
       <p class="welcome">Welcome to ThinChat, <%= current_user.name %>!</p>
+      <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
     </div>
   </div>  
 
