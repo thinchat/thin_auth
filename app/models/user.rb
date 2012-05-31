@@ -27,4 +27,8 @@ class User < ActiveRecord::Base
     domain = email.split('@').last
     ACCEPTED_DOMAINS.include? domain
   end
+
+  def to_json
+    super(:except => :password)
+  end
 end
