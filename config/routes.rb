@@ -2,7 +2,7 @@ ThinAuth::Application.routes.draw do
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
-  root :to => "pages#index"
+  match '/auth' => "pages#index"
 
   namespace :api do
     namespace :v1 do
