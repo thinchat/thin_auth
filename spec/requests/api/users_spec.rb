@@ -2,8 +2,7 @@ require 'spec_helper'
 require 'rack/test'
 
 describe "service" do
-  describe "GET on /api/v1/users/:id" do 
-    
+  describe "GET on /api/v1/users/:id" do
     let(:user) { User.create(:name => "a", :email => "a@a.com", :password => "hungry") }
 
     it "should return a user by name" do
@@ -23,6 +22,6 @@ describe "service" do
     it "should return a 404 for a user that doesn't exist" do
       get '/api/v1/users/100'
       response.status.should == 404
-    end 
+    end
   end
 end

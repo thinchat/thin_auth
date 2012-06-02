@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe User do
+
   describe ".approved_email?" do
     let(:user) { User.new(email: "test@hungrymachine.com") }
     context "when it is from a white-listed domain" do
@@ -36,4 +37,5 @@ describe User do
       end
     end
   end
+
 end
