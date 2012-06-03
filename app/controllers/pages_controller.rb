@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
   def index
-    @session = session
+    @session = cookies[:user]
   end
 
 end
