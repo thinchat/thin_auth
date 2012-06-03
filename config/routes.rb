@@ -1,6 +1,6 @@
 ThinAuth::Application.routes.draw do
-  scope '/auth' do
-    devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+    scope '/auth' do
+    devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }, :path => "auth/users"
 
     root :to => "pages#index"
 
