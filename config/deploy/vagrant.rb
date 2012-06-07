@@ -12,4 +12,4 @@ set :use_sudo, false
 
 set :scm, "git"
 set :repository, "git@github.com:thinchat/#{application}.git"
-set :branch, "master"
+set :branch, "auth_vagrant"
