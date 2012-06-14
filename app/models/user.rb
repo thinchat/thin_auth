@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name
   # attr_accessible :title, :body
 
+  before_create :ensure_authentication_token
+
   ACCEPTED_DOMAINS = [ 'hungrymachine.com', 'livingsocial.com' ]
 
   def self.find_for_open_id(access_token, signed_in_resource=nil)
