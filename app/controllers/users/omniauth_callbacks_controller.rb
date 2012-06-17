@@ -6,7 +6,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
     if @user.persisted?
       flash[:notice] = I18n.t "devise.omniauth_callbacks.success", :kind => "Google"
-      cookies.permanent.signed[:user] = { id: @user.id, name: @user.name, email: @user.email }.to_json
+      cookies.permanent.signed[:user] = { id: @user.id, name: @user.name,
+        email: @user.email, authentication_token: @user.authentication_token }.to_json
       sign_in_and_redirect @user, :event => :authentication
     else
       redirect_to root_url, :notice => 'You must use an approved e-mail to proceed.'
