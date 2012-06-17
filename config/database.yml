@@ -14,7 +14,7 @@ development:
   reconnect: false
   database: thin_auth_development
   pool: 5
-  username: root
+  username: thin_db_user
   password: 'hungry'
   socket: /tmp/mysql.sock
 
@@ -27,7 +27,7 @@ test:
   reconnect: false
   database: thin_auth_test
   pool: 5
-  username: root
+  username: thin_db_user
   password: 'hungry'
   socket: /tmp/mysql.sock
 
@@ -38,5 +38,5 @@ production:
   database: thin_auth_production
   pool: 5
   username: root
-  password: 
-  socket: /tmp/mysql.sock
+  password:
+  socket: /var/run/mysqld/mysqld.sock
